@@ -57,10 +57,13 @@ const basicCommands: Array<CommandResponse> = [
     commands: ['links', 'link'],
     response:
       'Charging Map: https://www.google.com/maps/d/edit?mid=1KIzwP95pZD0A3CWmjC6lcMD29f4&usp=sharing\n' +
-      'Boosted Board Riders Chicago: https://www.facebook.com/groups/BoostedCHI\n' +
+      'Facebook Groups\n'+
       'Chicago E-Skate: https://www.facebook.com/groups/chicagoeskate/\n' +
-      'Announcement Telegram: https://t.me/joinchat/AAAAAEwbHWf-hVIT53a75Q\n' +
-      'Telegram Invite Link: https://t.me/joinchat/GtOvohDOaknaq_0JfboLJg\n',
+      'Chicago Onewheel: https://www.facebook.com/groups/chicagoonewheel\n' +
+      'Chicago EUC: https://www.facebook.com/groups/chicagoeuc\n' +
+      'Chicago E-Bike: facebook.com/groups/665412891024870/\n +
+      'Telegram Group Invite Links\n' +
+      'Chicago E-Skate Telegram Invite Link: https://t.me/joinchat/GtOvohDOaknaq_0JfboLJg\n',
   },
   {
     commands: ['helmet', 'helmets'],
@@ -70,6 +73,7 @@ const basicCommands: Array<CommandResponse> = [
       'http://www.bernunlimited.com/\n' +
       'https://www.explorethousand.com/\n' +
       'https://www.ruroc.com/en/\n' +
+      'https://www.zeitbike.com/collections/helmets' +
       'https://www.youtube.com/watch?v=b9yL5usLFgY',
   },
   {
