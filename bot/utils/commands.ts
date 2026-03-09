@@ -28,6 +28,24 @@ const basicCommands: Array<CommandResponse> = [
       "for a list of commands that I have available, type a '/' and select the command you'd like",
   },
   {
+    commands: ['adapter', 'j1772', 'dongle'],
+    response:
+      '220v adapters (in order from common to uncommon) WARNING: your charger must say 220v or your charger will fail
+
+Search Plugshare in your AppStore to find charge spots
+
+Single J1772 (level 2 electric vehicle charger to household) https://a.co/d/01OhDk19
+
+Single J1772 with 3x splitter https://a.co/d/014Dyr6C
+
+TT-30P (3 prong 30 amp to household, aka RV 30 amp) https://a.co/d/035V9WNd
+
+NEMA 14-50P (4 prong 50 amp to household, aka RV 50 amp) https://a.co/d/046UXoWy
+
+L14-30P (4 prong 30 amps to household) https://a.co/d/07pO1i3b',
+    parse_mode,
+  },
+  {
     commands: ['flashlight', 'light', 'flashlights', 'lights'],
     response:
       "Check out the /r/flashlights post below to see some recommendations depending on what you're looking for\n" +
