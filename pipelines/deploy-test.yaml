@@ -1,0 +1,63 @@
+steps:
+  # Install TS
+  - name: "gcr.io/cloud-builders/npm"
+    args: 
+      - install
+
+  # Build all
+  - name: 'gcr.io/cloud-builders/npm'
+    args:
+      - run
+      - build  
+
+  # Deploy APIs
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      - functions
+      - deploy
+      - fetchRideQA
+      - --source=./built/api/
+      - --trigger-http
+      - --runtime=nodejs12
+      - --entry-point=fetchRide
+      - --allow-unauthenticated
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      - functions
+      - deploy
+      - chargingHandlerQA
+      - --source=./built/api/
+      - --trigger-http
+      - --runtime=nodejs12
+      - --entry-point=chargingHandler
+      - --allow-unauthenticated
+  # Deploy Bot
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      - functions
+      - deploy
+      - botFunctionQA
+      - --source=./built/bot/
+      - --trigger-http
+      - --runtime=nodejs12
+      - --entry-point=botFunction
+
+  
+  
+      # TODO: Re-Add Client Deploys
+
+  # Deploy Client
+  # # NPM Install
+  # - name: "gcr.io/cloud-builders/npm"
+  #   args: ["--prefix", "./client/", "install"]
+  # # NPM Build
+  # - name: "gcr.io/cloud-builders/npm"
+  #   args: ["run", "build", "--prefix", "./client/"]
+  # # GCloud Deploy
+  # - name: "gcr.io/cloud-builders/gcloud"
+  #   args:
+  #     - "app"
+  #     - "deploy"
+  #     - "./client/client.yaml"
+  #     - "--no-promote"
